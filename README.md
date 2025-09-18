@@ -14,15 +14,6 @@ A plataforma cuida desde o cadastro inicial até a validação e aprovação, ga
 
 ---
 
-## 🏗️ Principais Classes
-
-- **Candidato** → informações básicas e solicitação de afiliação  
-- **Voluntário** → extensão de candidato, com vínculo a ONGs e campanhas  
-- **ONG** → dados da organização, área de atuação e capacidade  
-- **Aprovador** → responsável por aprovar, rejeitar e recomendar vínculos  
-
----
-
 ## 📚 Estrutura da Wiki
 
 A documentação detalhada do projeto está organizada na **Wiki** deste repositório, com os seguintes tópicos:
