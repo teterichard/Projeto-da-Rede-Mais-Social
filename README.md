@@ -28,7 +28,7 @@ A plataforma cuida desde o cadastro inicial até a validação e aprovação, ga
 A documentação detalhada do projeto está organizada na **Wiki** deste repositório, com os seguintes tópicos:
 
 - [Home](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki)
-- [1. Descrição do projeto e cenários](.https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/1.-Descri%C3%A7%C3%A3o-do-projeto-e-cen%C3%A1rios)   
-- [2. Sequência de Telas - Cenário 1](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/2.-Sequ%C3%AAncia-de-Telas--%E2%80%90-Cen%C3%A1rio-1)  
-- [3. Sequência de Telas - Cenário 2](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/3.-Sequ%C3%AAncia-de-Telas-%E2%80%90-Cen%C3%A1rio-2)  
-- [4. Diagrama UML](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/4.-Diagrama-UML)   
+- [1. Descrição do projeto e cenários](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/1.-Descri%C3%A7%C3%A3o-do-projeto-e-cen%C3%A1rios)
+- [2. Sequência de Telas - Cenário 1](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/2.-Sequ%C3%AAncia-de-Telas--%E2%80%90-Cen%C3%A1rio-1)
+- [3. Sequência de Telas - Cenário 2](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/3.-Sequ%C3%AAncia-de-Telas-%E2%80%90-Cen%C3%A1rio-2)
+- [4. Diagrama UML](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/4.-Diagrama-UML)
