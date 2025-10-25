@@ -23,3 +23,4 @@ A documentação detalhada do projeto está organizada na **Wiki** deste reposit
 - [2. Sequência de Telas - Cenário 1](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/2.-Sequ%C3%AAncia-de-Telas--%E2%80%90-Cen%C3%A1rio-1)
 - [3. Sequência de Telas - Cenário 2](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/3.-Sequ%C3%AAncia-de-Telas-%E2%80%90-Cen%C3%A1rio-2)
 - [4. Diagrama UML](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/4.-Diagrama-UML)
+- [5. Diagrama de Classes de Sequência ]([https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/4.-Diagrama-UML](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/5.-Diagrama-de-Classes-de-Sequ%C3%AAncia)
