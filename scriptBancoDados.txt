@@ -1,0 +1,111 @@
+CREATE DATABASE IF NOT EXISTS rede_mais_social CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE rede_mais_social;
+
+CREATE TABLE candidato (
+    id_candidato INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(20) NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14),
+    cnpj VARCHAR(18),
+    data_solicitacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    endereco TEXT,
+    telefone VARCHAR(30),
+    situacao VARCHAR(50) DEFAULT 'AGUARDANDO_VALIDACAO',
+    aceite_termo BOOLEAN DEFAULT FALSE,
+    data_validacao_email DATETIME,
+    token_validacao VARCHAR(100),
+    tipo_perfil VARCHAR(50),
+    data_nascimento DATE,
+    sexo VARCHAR(20),
+    nacionalidade VARCHAR(100)
+);
+
+CREATE TABLE voluntario (
+    id_voluntario INT AUTO_INCREMENT PRIMARY KEY,
+    id_candidato INT NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    cpf VARCHAR(14),
+    data_nascimento DATE,
+    sexo VARCHAR(20),
+    nacionalidade VARCHAR(100),
+    endereco TEXT,
+    email VARCHAR(200),
+    telefone VARCHAR(30),
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_candidato) REFERENCES candidato(id_candidato)
+);
+
+CREATE TABLE representante (
+    id_representante INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200) NOT NULL,
+    email VARCHAR(200),
+    cnpj VARCHAR(18),
+    senha VARCHAR(255)
+);
+
+CREATE TABLE ong (
+    id_ong INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200) NOT NULL,
+    cnpj VARCHAR(18),
+    endereco TEXT,
+    telefone VARCHAR(30),
+    areaAtuacao VARCHAR(150),
+    representante_legal_id INT,
+    FOREIGN KEY (representante_legal_id) REFERENCES representante(id_representante)
+);
+
+CREATE TABLE afiliacao (
+    id_afiliacao INT AUTO_INCREMENT PRIMARY KEY,
+    id_candidato INT NOT NULL,
+    data_solicitacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'AGUARDANDO_VALIDACAO',
+    data_aprovacao DATETIME,
+    motivo_rejeicao TEXT,
+    FOREIGN KEY (id_candidato) REFERENCES candidato(id_candidato)
+);
+
+CREATE TABLE perfil (
+    id_perfil INT AUTO_INCREMENT PRIMARY KEY,
+    id_voluntario INT NOT NULL,
+    descricao TEXT,
+    interesses TEXT,
+    habilidades TEXT,
+    FOREIGN KEY (id_voluntario) REFERENCES voluntario(id_voluntario)
+);
+
+CREATE TABLE campanha (
+    id_campanha INT AUTO_INCREMENT PRIMARY KEY,
+    id_ong INT NOT NULL,
+    nomeCampanha VARCHAR(200),
+    descricao TEXT,
+    capacidade INT,
+    FOREIGN KEY (id_ong) REFERENCES ong(id_ong)
+);
+
+CREATE TABLE recomendacao (
+    id_recomendacao INT AUTO_INCREMENT PRIMARY KEY,
+    id_voluntario INT NOT NULL,
+    id_ong INT NOT NULL,
+    id_campanha INT,
+    data_recomendacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    motivo TEXT,
+    FOREIGN KEY (id_voluntario) REFERENCES voluntario(id_voluntario),
+    FOREIGN KEY (id_ong) REFERENCES ong(id_ong),
+    FOREIGN KEY (id_campanha) REFERENCES campanha(id_campanha)
+);
+
+CREATE TABLE usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(150) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL,
+    id_voluntario INT,
+    id_ong INT,
+    id_representante INT,
+    papel VARCHAR(50) CHECK (papel IN ('ADMIN','REPRESENTANTE','VOLUNTARIO','ONG')),
+    ativo BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (id_voluntario) REFERENCES voluntario(id_voluntario),
+    FOREIGN KEY (id_ong) REFERENCES ong(id_ong),
+    FOREIGN KEY (id_representante) REFERENCES representante(id_representante)
+);
