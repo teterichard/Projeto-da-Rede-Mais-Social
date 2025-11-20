@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rede Mais Social</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <h1 class="page-title">Rede Mais Social</h1>
+        <p class="page-subtitle">Acesse sua conta</p>
+
+        <div class="card">
+            <h2 class="card-title">Login</h2>
+            
+            <form class="form-login" id="formLogin">
+                <div class="form-group">
+                    <label class="label-login">E-mail</label>
+                    <input type="email" class="input-login" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="label-login">CPF</label>
+                    <input type="text" class="input-login" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-light" onclick="window.location.href='index.html'">Voltar</button>
+                    <button type="submit" class="btn btn-dark">Entrar</button>
+                </div>
+            </form>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" style="color: #666; font-size: 0.9rem; text-decoration: none;">Esqueceu sua senha?</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('input[name="cpf"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                e.target.value = value;
+            }
+        });
+
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login em desenvolvimento');
+        });
+    </script>
+</body>
+</html>

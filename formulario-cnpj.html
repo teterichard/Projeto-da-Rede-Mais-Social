@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Perfil CNPJ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <h1 class="page-title">Solicitar Afiliação</h1>
+        <p class="page-subtitle">Formulário de Perfil CNPJ</p>
+
+        <div class="card">
+            <h2 class="card-title">Por favor preencha com as informações solicitadas</h2>
+            
+            <form class="form-login" id="formCNPJ">
+                <div class="form-group">
+                    <label class="label-login">Certidões Negativas De Probidade Administrativa *</label>
+                    <input type="text" class="input-login" name="certidoesProbidade" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="label-login">Certidões De Inelegibilidade *</label>
+                    <input type="text" class="input-login" name="certidoesInelegibilidade" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-light" onclick="window.location.href='tipo-afiliacao.html'">Voltar</button>
+                    <button type="submit" class="btn btn-dark">Envia</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('formCNPJ').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            
+            // Salvar dados no sessionStorage
+            sessionStorage.setItem('dadosCNPJ', JSON.stringify(Object.fromEntries(formData)));
+            window.location.href = 'formulario-representante-cnpj.html';
+        });
+    </script>
+</body>
+</html>

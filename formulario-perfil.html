@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Voluntário</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <h1 class="page-title">Solicitar Afiliação</h1>
+        <p class="page-subtitle">Perfil do Voluntário</p>
+
+        <div class="card">
+            <h2 class="card-title">Descreva seu Perfil</h2>
+            
+            <form class="form-login" id="formPerfil">
+                <div class="form-group">
+                    <label class="label-login">Perfil *</label>
+                    <textarea class="input-login" name="apresentacao" rows="4" 
+                              placeholder="Conte um pouco sobre você..." 
+                              style="padding: 12px 18px; height: auto; resize: vertical;" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="label-login">Habilidades *</label>
+                    <input type="text" class="input-login" name="habilidades" 
+                           placeholder="Ex: Informática, Ensino, Organização de eventos" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="label-login">Áreas de Interesse *</label>
+                    <input type="text" class="input-login" name="areasInteresse" 
+                           placeholder="Ex: Educação, Meio Ambiente, Saúde" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-light" onclick="window.location.href='formulario-identificacao.html'">Voltar</button>
+                    <button type="submit" class="btn btn-dark">Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('formPerfil').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            
+            // Validação básica
+            if (!formData.get('apresentacao').trim()) {
+                alert('Erro: A apresentação pessoal não pode estar vazia.');
+                return;
+            }
+            
+            // Salvar dados no sessionStorage e avançar
+            sessionStorage.setItem('dadosPerfil', JSON.stringify(Object.fromEntries(formData)));
+            window.location.href = 'termo-compromisso.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o Tipo de Afiliação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <h1 class="page-title">Solicitar Afiliação</h1>
+        <p class="page-subtitle">Escolha o tipo de afiliação</p>
+
+        <div class="card">
+            <h2 class="card-title">Você é:</h2>
+            
+            <form class="form-login" onsubmit="event.preventDefault(); selecionarTipo();">
+                <div class="form-group">
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="pf" checked>
+                            Pessoa Física (Voluntário)
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="pj">
+                            Pessoa Jurídica (CNPJ)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-light" onclick="window.location.href='index.html'">Voltar</button>
+                    <button type="submit" class="btn btn-dark">Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function selecionarTipo() {
+            const tipo = document.querySelector('input[name="tipo"]:checked').value;
+            if (tipo === 'pf') {
+                window.location.href = 'formulario-identificacao.html';
+            } else {
+                window.location.href = 'formulario-cnpj.html';
+            }
+        }
+    </script>
+</body>
+</html>

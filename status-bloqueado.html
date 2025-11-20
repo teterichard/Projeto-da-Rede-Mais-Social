@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação Bloqueada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <h1 class="page-title">Solicitação Bloqueada</h1>
+
+        <div class="card">
+            <div class="confirmation-icon">
+                <div class="confirmation-avatar" style="background: #d32f2f;">✕</div>
+            </div>
+
+            <h2 class="confirmation-title">Termos Não Aceitos</h2>
+            <p class="confirmation-text">Você recusou os termos de compromisso.</p>
+            <p class="confirmation-status">Status: <strong>BLOQUEADO</strong></p>
+
+            <div class="alert-box" style="background: #ffebee; border-color: #ef9a9a;">
+                <p class="alert-text">
+                    Para se afiliar à Rede Mais Social, é necessário aceitar os termos de compromisso. 
+                    Caso mude de ideia, você pode iniciar uma nova solicitação.
+                </p>
+            </div>
+
+            <div class="confirmation-actions">
+                <a href="index.html" class="full-width-link">
+                    <button class="btn btn-dark">Voltar à Página Inicial</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Limpar dados do sessionStorage
+        sessionStorage.removeItem('dadosIdentificacao');
+        sessionStorage.removeItem('dadosPerfil');
+        sessionStorage.removeItem('tokenValidacao');
+    </script>
+</body>
+</html>
