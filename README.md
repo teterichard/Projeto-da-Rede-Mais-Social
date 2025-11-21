@@ -42,7 +42,7 @@ Toda a documentação detalhada está organizada na Wiki:
 7. **Script Banco de Dados**
    [https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados)
 
-8. **Implemen**
+8. **Implementação**
    [https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/8.-Implementa%C3%A7%C3%A3o-do-projeto](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/8.-Implementa%C3%A7%C3%A3o-do-projeto)
 
 ---
@@ -86,11 +86,6 @@ sudo service mysql start
       ```
    sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
          ```
-5. Execute o sistema:
-
-   ```bash
-   bash run.sh
-   ```
 ---
 
 ## Executando o Sistema
@@ -109,6 +104,7 @@ Acesse:
 ---
 
 ## Outro Comando Útil
+
 Consultar banco de dados
 sudo mysql -e "USE rede_mais_social; SELECT * FROM candidato;"
 ## Fluxo de Dados
