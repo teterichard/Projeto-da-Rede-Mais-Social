@@ -43,8 +43,24 @@ Toda a documentação detalhada está organizada na Wiki:
    [https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados)
 
 ---
+## Funcionalidades
 
-## 📋 Pré-requisitos
+
+### Para Candidatos
+- Cadastro como Pessoa Física (CPF) ou Pessoa Jurídica (CNPJ)
+- Formulário multi-etapas (identificação → perfil → termo)
+- Validação de email com token único
+- Consulta de status da solicitação
+- Login para retornar ao cadastro
+
+
+### Para o Sistema
+- Validação de email, CPF e CNPJ
+- Geração automática de tokens
+- Envio de emails de confirmação (simulado)
+- Armazenamento no MySQL
+
+## Pré-requisitos
 
 * Java **JDK 8+**
 * MySQL **8.0+**
@@ -53,7 +69,7 @@ Toda a documentação detalhada está organizada na Wiki:
 
 ---
 
-## 🗄️ Configuração do Banco de Dados
+## Configuração do Banco de Dados
 
 1. Inicie o MySQL
 2. Execute:
@@ -65,7 +81,7 @@ Toda a documentação detalhada está organizada na Wiki:
 
 ---
 
-## ▶️ Executando o Sistema
+## Executando o Sistema
 
 No terminal, dentro da pasta do projeto:
 
@@ -80,54 +96,24 @@ Acesse:
 
 ---
 
-## 🌐 Acesso ao Sistema
+Outros Comandos Úteis
+# Consultar banco de dados
+mysql -u root -e "USE rede_mais_social; SELECT * FROM candidato;"
 
-* `index.html` — Página inicial
-* `tipo-afiliacao.html` — Escolha CPF/CNPJ
-* `login.html` — Login para candidatos cadastrados
 
----
-
-Claro! Aqui está **somente a seção “Estrutura Completa do Projeto (Código)”**, formatada em **Markdown limpo e organizado**:
-
----
-
-## 📁 Estrutura Completa do Projeto (Código)
-
-```
-Projeto-da-Rede-Mais-Social/
-│
-├── src/
-│   ├── WebServer.java                     # Servidor HTTP principal
-│   ├── AfiliacaoController.java           # Controlador do processo de afiliação
-│   ├── Candidato.java                     # Modelo de candidato
-│   ├── Afiliacao.java                     # Modelo de afiliação
-│   ├── CandidatoDAO.java                  # DAO para operações de candidato
-│   ├── AfiliacaoDAO.java                  # DAO para operações de afiliação
-│   ├── DatabaseConnection.java            # Gerenciador de conexão MySQL
-│   ├── EmailService.java                  # Serviço de envio de e-mails
-│   └── Validador.java                     # Validação de CPF, CNPJ e e-mail
-│
-├── bin/                                   # Arquivos .class compilados
-│
-├── web/
-│   ├── index.html                         
-│   ├── tipo-afiliacao.html                
-│   ├── formulario-identificacao.html      
-│   ├── formulario-cnpj.html               
-│   ├── formulario-representante-cnpj.html 
-│   ├── formulario-perfil.html             
-│   ├── termo-compromisso.html             
-│   ├── validacao-email.html               
-│   ├── status-aguardando.html             
-│   ├── login.html                         
-│   └── styles.css                         
-│
-├── mysql-connector-j-8.0.33.jar           
-├── scriptBancoDados.txt                   
-├── run.sh                                 
-└── README.md                              
+# Recompilar (se necessário)
+javac -d bin -cp ".:mysql-connector-j-8.0.33.jar" src/*.java
 ```
 
----
-                     
+### Fluxo de Dados
+
+
+1. **Frontend** → Envia JSON via `fetch()`
+2. **WebServer** → Recebe e roteia para handler adequado
+3. **Controller** → Valida dados e aplica regras de negócio
+4. **DAO** → Executa operações no banco de dados
+5. **MySQL** → Armazena/retorna dados
+6. **Backend** → Retorna JSON com resultado
+7. **Frontend** → Exibe resposta ao usuário
+
+```
