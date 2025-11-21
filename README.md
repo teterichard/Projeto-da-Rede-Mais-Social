@@ -72,16 +72,25 @@ Toda a documentação detalhada está organizada na Wiki:
 
 ---
 
-## Configuração do Banco de Dados
+## Comandos de Instalação e Execução
 
 1. Inicie o MySQL
-2. Execute:
+```
+sudo service mysql start
+  ```
+2. Crie o banco de dados
+   ```
+   sudo mysql < scriptBancoDados.txt
+   ```
+3. Configura acesso sem senha
+      ```
+   sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
+         ```
+5. Execute o sistema:
 
    ```bash
-   mysql -u root -p < scriptBancoDados.txt
+   bash run.sh
    ```
-3. Verifique se as tabelas `candidato` e `afiliacao` foram criadas.
-
 ---
 
 ## Executando o Sistema
@@ -101,8 +110,7 @@ Acesse:
 
 ## Outro Comando Útil
 Consultar banco de dados
-mysql -u root -e "USE rede_mais_social; SELECT * FROM candidato;"
-
+sudo mysql -e "USE rede_mais_social; SELECT * FROM candidato;"
 ## Fluxo de Dados
 
 1. **Frontend** → Envia JSON via `fetch()`
