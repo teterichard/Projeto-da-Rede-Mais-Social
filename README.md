@@ -99,17 +99,11 @@ Acesse:
 
 ---
 
-Outros Comandos Úteis
-# Consultar banco de dados
+## Outro Comando Útil
+Consultar banco de dados
 mysql -u root -e "USE rede_mais_social; SELECT * FROM candidato;"
 
-
-# Recompilar (se necessário)
-javac -d bin -cp ".:mysql-connector-j-8.0.33.jar" src/*.java
-```
-
-### Fluxo de Dados
-
+## Fluxo de Dados
 
 1. **Frontend** → Envia JSON via `fetch()`
 2. **WebServer** → Recebe e roteia para handler adequado
@@ -118,5 +112,3 @@ javac -d bin -cp ".:mysql-connector-j-8.0.33.jar" src/*.java
 5. **MySQL** → Armazena/retorna dados
 6. **Backend** → Retorna JSON com resultado
 7. **Frontend** → Exibe resposta ao usuário
-
-```
