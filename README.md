@@ -42,6 +42,9 @@ Toda a documentação detalhada está organizada na Wiki:
 7. **Script Banco de Dados**
    [https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/7.-Script-Banco-de-Dados)
 
+8. **Implemen**
+   [https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/8.-Implementa%C3%A7%C3%A3o-do-projeto](https://github.com/teterichard/Projeto-da-Rede-Mais-Social/wiki/8.-Implementa%C3%A7%C3%A3o-do-projeto)
+
 ---
 ## Funcionalidades
 
